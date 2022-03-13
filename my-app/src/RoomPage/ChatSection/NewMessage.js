@@ -39,6 +39,7 @@ const NewMessage = () => {
         className="new_message_button"
         src={SendMessageButton}
         onClick={sendMessage}
+        alt = ""
       />
     </div>
   );

@@ -15,6 +15,7 @@ const MicButton = () => {
   return (
     <div className="video_button_container">
       <img
+        alt = ""
         src={isMicMuted ? MicButtonImgOff : MicButtonImg}
         onClick={handleMicButtonPressed}
         className="video_button_image"
