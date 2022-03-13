@@ -245,6 +245,6 @@ if(process.env.NODE_ENV === "production"){
 
 app.use(notFound);
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
 });
