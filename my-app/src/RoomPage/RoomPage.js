@@ -28,7 +28,7 @@ const RoomPage = ({
         connectOnlyWithAudio
       );
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="room_container">
