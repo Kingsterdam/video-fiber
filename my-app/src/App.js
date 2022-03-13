@@ -10,6 +10,7 @@ import "./App.css";
 function App() {
   useEffect(() => {
     connectWithSocketIOServer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps;
   }, []);
 
   return (
