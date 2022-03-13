@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "cd my-app/src react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix my-app",
     "dev": "concurrently \"npm start \" \"npm run client",
+    "start": "cd my-app/src react-scripts start",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app"
   },
   "author": "amit mishra",
