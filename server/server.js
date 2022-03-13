@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 5002;
 const app = express();
 const server = http.createServer(app);
 const path = require("path");
+const { domainToASCII } = require("url");
+const dotenv = require(dotenv);
+
+dotenv.config();
 
 app.use(cors());
 
@@ -232,12 +236,14 @@ const directMessageHandler = (data, socket) => {
 __dirname = path.resolve();
 
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static(__dirname, "/my-app/build"));
+  app.use(express.static(path.join(__dirname, "/my-app/build")));
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, 'my-app', 'build', 'index.html'));
   });
 }
+
+app.use(notFound);
 
 server.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
