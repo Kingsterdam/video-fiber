@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.17.5",
     "@babel/generator": "^7.17.3",
     "@babel/helper-module-transforms": "^7.17.6",
     "@babel/helpers": "^7.17.2",
