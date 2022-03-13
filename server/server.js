@@ -237,9 +237,9 @@ const directMessageHandler = (data, socket) => {
 __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
-  server.use(express.static(path.join(__dirname, "/my-app/build")));
+  app.use(express.static(path.join(__dirname, "/my-app/build")));
 
-  server.get("*", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, 'my-app', 'build', 'index.html'));
   });
 }
