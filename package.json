@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cd my-app/src react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix my-app",
     "dev": "concurrently \"npm start \" \"npm run client",
