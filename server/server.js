@@ -14,6 +14,7 @@ const dotenv = require(dotenv);
 dotenv.config();
 
 app.use(cors());
+app.use(express.json())
 
 let connectedUsers = [];
 let rooms = [];
@@ -235,16 +236,14 @@ const directMessageHandler = (data, socket) => {
 // --------------- deployment -----------
 __dirname = path.resolve();
 
-if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.join(__dirname, "/my-app/build")));
+if (process.env.NODE_ENV === "production") {
+  server.use(express.static(path.join(__dirname, "/my-app/build")));
 
-  app.get("*", (req, res) => {
+  server.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, 'my-app', 'build', 'index.html'));
   });
 }
 
-app.use(notFound);
-
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
 });
