@@ -17,7 +17,7 @@ const JoinRoomPage = (props) => {
     if (isRoomHost) {
       setIsRoomHostAction(true);
     }
-  }, []);
+  }, [setIsRoomHostAction]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="join_room_page_container">
