@@ -1,0 +1,6 @@
+/build
+/my-app/build
+
+.DS_Store
+.env
+node_modules
