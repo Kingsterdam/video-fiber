@@ -237,13 +237,9 @@ const directMessageHandler = (data, socket) => {
 __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/my-app/build")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'my-app', 'build', 'index.html'));
-  });
+  app.use(express.static("/my-app/build"));
 }
 
-server.listen(PORT, () => {
-  console.log(`Server is listening on ${PORT}`);
+server.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is listening}`);
 });
